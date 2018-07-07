@@ -11,11 +11,16 @@ public class HelloWorldController {
 
 	@RequestMapping(value = { "/un-secure" })
 	public String helloWorld(HttpServletRequest request, HttpServletResponse response) {
-		return "Hello World";
+		return "un-secure World";
 	}
 
 	@RequestMapping(value = { "/secure" })
-	public String demo(HttpServletRequest request, HttpServletResponse response) {
+	public String secure(HttpServletRequest request, HttpServletResponse response) {
 		return "secure url";
+	}
+
+	@RequestMapping(value = { "/admin" })
+	public String admin(HttpServletRequest request, HttpServletResponse response) {
+		return "admin url";
 	}
 }

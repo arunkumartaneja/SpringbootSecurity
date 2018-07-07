@@ -7,9 +7,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 @SpringBootApplication
 @EnableGlobalMethodSecurity
 public class SpringbootSecurityApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootSecurityApplication.class, args);
 	}
-
 }

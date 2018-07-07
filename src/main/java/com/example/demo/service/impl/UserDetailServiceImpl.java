@@ -1,5 +1,8 @@
 package com.example.demo.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.User;
@@ -24,7 +27,9 @@ public class UserDetailServiceImpl implements UserDetailsService {
 		if (user == null) {
 			throw new UsernameNotFoundException("Invalid username or password.");
 		}
-		return new User(user.getUserName(), user.getPassword(), AuthorityUtils.createAuthorityList("USER"));
+		
+		List<String> roles =  new ArrayList<>();
+		return new User(user.getUserName(), user.getPassword(), AuthorityUtils.createAuthorityList(roles.toArray(new String[roles.size()])));
 
 	}
 
